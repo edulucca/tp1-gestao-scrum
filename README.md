@@ -13,13 +13,13 @@ Para acessar os serviços do sistema, o usuário deve realizar a autenticação 
 ## 🚀 Como baixar e abrir o projeto
 
 Siga os passos abaixo para configurar o ambiente no seu computador:
-
-1. **Clonar o repositório:**
+1. **Instalar e configurar git e GitHub**
+   Guia prático: [Git na Prática — Um Guia Completo e Explicado para Iniciantes](https://medium.com/@hitoshyamamoto/git-na-pr%C3%A1tica-um-guia-completo-e-explicado-para-iniciantes-7cdaf1914e1f)
+2. **Clonar o repositório:**
    Abra o seu terminal (ou Git Bash) e execute o comando:
    ```bash
-   git clone [https://github.com/seu-usuario/seu-repositorio.git](https://github.com/seu-usuario/seu-repositorio.git)
-   ```
-2. **Abrir no Code::Blocks**
+   git clone https://github.com/edulucca/tp1-gestao-scrum.git   ```
+3. **Abrir no Code::Blocks**
 
     Abra o software Code::Blocks.
 
@@ -29,7 +29,7 @@ Siga os passos abaixo para configurar o ambiente no seu computador:
 
     Selecione o arquivo com a extensão .cbp (ex: gestaoscrum.cbp) e clique em abrir.
 
-3. **Compilar e Executar**
+4. **Compilar e Executar**
 
     Com o projeto aberto, pressione a tecla F9 (ou clique no ícone de engrenagem com o "play" azul na barra de ferramentas).
 
