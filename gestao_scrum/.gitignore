@@ -1,0 +1,7 @@
+# Binários e objetos
+bin/
+obj/
+
+# Arquivos de layout do CodeBlocks (opções locais de interface)
+*.layout
+*.depend
