@@ -32,4 +32,26 @@ Siga os passos abaixo para configurar o ambiente no seu computador:
 3. **Compilar e Executar**
 
     Com o projeto aberto, pressione a tecla F9 (ou clique no ícone de engrenagem com o "play" azul na barra de ferramentas).
+
+## Atividades a Realizar
+
+   O desenvolvimento do projeto segue o seguinte cronograma de atividades:
+
+    [ ] Projetar, codificar e documentar classes domínio (domain classes).
+
+    [ ] Projetar, codificar e documentar classes entidade (entity classes).
+
+    [ ] Construir modelo de arquitetura, codificar e documentar as interfaces entre módulos.
+
+    [ ] Projetar e codificar a camada de apresentação.
+
+    [ ] Projetar e codificar a camada de serviço.
+
+    [ ] Criar vídeo demonstrando a execução com sucesso do teste fumaça (smoke test) do código integrado.
+
+## ⚠️ Observações para Colaboradores
+
+    Não delete o arquivo .cbp: Ele é o arquivo de projeto essencial para que o Code::Blocks reconheça os arquivos e as configurações de compilação em qualquer computador.
+
+    Adição de arquivos: Sempre que criar um novo arquivo .cpp ou .hpp, faça-o por dentro da IDE (File > New > File) ou clique com o botão direito no projeto e selecione Add files.... Isso garante que o arquivo seja registrado no .cbp e sincronizado corretamente via Git.
   
