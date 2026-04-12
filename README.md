@@ -29,6 +29,8 @@ Siga os passos abaixo para configurar o ambiente no seu computador:
 
     Selecione o arquivo com a extensão .cbp (ex: gestaoscrum.cbp) e clique em abrir.
 
+    **Nota:** Caso nem todos os arquivos apareçam no projeto ao abri-lo, clique com o botão direito no projeto na aba "Management" e selecione "Add files recursively..." para adicionar todos os arquivos da pasta recursivamente.
+
 4. **Compilar e Executar**
 
     Com o projeto aberto, pressione a tecla F9 (ou clique no ícone de engrenagem com o "play" azul na barra de ferramentas).

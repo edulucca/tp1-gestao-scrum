@@ -8,7 +8,7 @@ const string Estado::FEITO = "FEITO";
 
 void Estado::setEstado(string estado){
     if(estado != A_FAZER || estado != FAZENDO || estado != FEITO){
-
+        throw invalid_argument("Estado invalido");
     }
     this->estado = estado;
 }

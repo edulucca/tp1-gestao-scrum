@@ -1,7 +1,6 @@
-#ifndef ESTADO_HPP_INCLUDED
-#define ESTADO_HPP_INCLUDED
 #include <iostream>
 #include <string>
+#include <stdexcept>
 
 using namespace std;
 
@@ -15,6 +14,3 @@ class Estado {
     public:
         void setEstado(string);
 };
-
-
-#endif // ESTADO_HPP_INCLUDED
