@@ -13,6 +13,8 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="src/Dominio" />
+					<Add directory="include/Dominio" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -32,13 +34,13 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="Estado.cpp">
-			<Option target="Debug" />
-		</Unit>
-		<Unit filename="Estado.hpp">
-			<Option target="Debug" />
-		</Unit>
-		<Unit filename="main.cpp" />
+		<Unit filename="include/Dominio/Codigo.hpp" />
+		<Unit filename="include/Dominio/Estado.hpp" />
+		<Unit filename="include/Dominio/Nome.hpp" />
+		<Unit filename="src/Dominio/Codigo.cpp" />
+		<Unit filename="src/Dominio/Estado.cpp" />
+		<Unit filename="src/Dominio/Nome.cpp" />
+		<Unit filename="src/main.cpp" />
 		<Extensions>
 			<DoxyBlocks>
 				<comment_style block="2" line="2" />
