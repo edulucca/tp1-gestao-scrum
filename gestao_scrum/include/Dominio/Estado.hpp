@@ -13,4 +13,6 @@ class Estado {
         string estado;
     public:
         void setEstado(string);
+        string getEstado() const;
+        bool validar(const string&) const;
 };
