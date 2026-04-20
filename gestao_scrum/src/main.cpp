@@ -53,10 +53,10 @@ int main()
         return 0;
     }
 
-    // Valida papel    
+    // Valida papel
     string meuPapel1 = "DESENVOLVEDOR";
     string meuPapel2 = "MESTRE SCRUM";
-    string meuPapel3 = "PROPRIETARIO; DE PRODUTO";
+    string meuPapel3 = "PROPRIETARIO DE PRODUTO";
     Papel papel;
 
     try{
@@ -76,7 +76,7 @@ int main()
     string minhaPrioridade2 = "MEDIA";
     string minhaPrioridade3 = "BAIXA";
     Prioridade prioridade;
-    
+
     try{
         prioridade.setPrioridade(minhaPrioridade1);
         cout << "Prioridade valida: " << prioridade.getPrioridade() << endl;
