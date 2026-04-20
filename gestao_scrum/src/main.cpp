@@ -5,6 +5,7 @@
 #include "Estado.hpp"
 #include "Papel.hpp"
 #include "Prioridade.hpp"
+#include "Data.hpp"
 
 
 using namespace std;
@@ -89,10 +90,23 @@ int main()
         return 0;
     }
 
+    // Valida data
+    string minhaData1 = "29/02/2024";
+    string minhaData2 = "1/03/2024";
+    string minhaData3 = "pa/di/2099";
+    Data data;
 
-
-
-
+    try{
+        data.setData(minhaData1);
+        cout << "Data valida: " << data.getData() << endl;
+        data.setData(minhaData2);
+        cout << "Data valida: " << data.getData() << endl;
+        data.setData(minhaData3);
+        cout << "Data valida: " << data.getData() << endl;
+    } catch (const invalid_argument& error){
+        cerr << "Erro: " << error.what() << endl;
+        return 0;
+    }
 
     return 0;
 }
