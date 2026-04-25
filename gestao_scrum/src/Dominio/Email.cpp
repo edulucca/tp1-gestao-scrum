@@ -65,6 +65,8 @@ bool Email::validar(const string& email) const {
         }
     }
 
-
+    if (!arrobaFound || parte_local == 0 || parte_dominio == 0) {
+        return false;
+    }
     return true;
 }
