@@ -36,12 +36,14 @@
 		</Compiler>
 		<Unit filename="include/Dominio/Codigo.hpp" />
 		<Unit filename="include/Dominio/Data.hpp" />
+		<Unit filename="include/Dominio/Email.hpp" />
 		<Unit filename="include/Dominio/Estado.hpp" />
 		<Unit filename="include/Dominio/Nome.hpp" />
 		<Unit filename="include/Dominio/Papel.hpp" />
 		<Unit filename="include/Dominio/Prioridade.hpp" />
 		<Unit filename="src/Dominio/Codigo.cpp" />
 		<Unit filename="src/Dominio/Data.cpp" />
+		<Unit filename="src/Dominio/Email.cpp" />
 		<Unit filename="src/Dominio/Estado.cpp" />
 		<Unit filename="src/Dominio/Nome.cpp" />
 		<Unit filename="src/Dominio/Papel.cpp" />
