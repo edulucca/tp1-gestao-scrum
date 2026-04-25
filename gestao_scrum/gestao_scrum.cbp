@@ -15,6 +15,8 @@
 					<Add option="-g" />
 					<Add directory="src/Dominio" />
 					<Add directory="include/Dominio" />
+					<Add directory="src/Entidade" />
+					<Add directory="include/Entidade" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -41,6 +43,8 @@
 		<Unit filename="include/Dominio/Nome.hpp" />
 		<Unit filename="include/Dominio/Papel.hpp" />
 		<Unit filename="include/Dominio/Prioridade.hpp" />
+		<Unit filename="include/Dominio/Senha.hpp" />
+		<Unit filename="include/Entidade/Pessoa.hpp" />
 		<Unit filename="src/Dominio/Codigo.cpp" />
 		<Unit filename="src/Dominio/Data.cpp" />
 		<Unit filename="src/Dominio/Email.cpp" />
@@ -48,7 +52,13 @@
 		<Unit filename="src/Dominio/Nome.cpp" />
 		<Unit filename="src/Dominio/Papel.cpp" />
 		<Unit filename="src/Dominio/Prioridade.cpp" />
+		<Unit filename="src/Dominio/Senha.cpp" />
+		<Unit filename="src/Entidade/Pessoa.cpp" />
 		<Unit filename="src/main.cpp" />
+		<Unit filename="src/mainPessoa.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
 		<Extensions>
 			<DoxyBlocks>
 				<comment_style block="2" line="2" />

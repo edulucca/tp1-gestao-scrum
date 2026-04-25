@@ -7,6 +7,7 @@
 #include "Prioridade.hpp"
 #include "Data.hpp"
 #include "Email.hpp"
+#include "Senha.hpp"
 
 
 using namespace std;
