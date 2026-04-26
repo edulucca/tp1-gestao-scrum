@@ -1,6 +1,7 @@
 # Binários e objetos
 bin/
 obj/
+.objs/
 
 # Arquivos de layout do CodeBlocks (opções locais de interface)
 *.layout
