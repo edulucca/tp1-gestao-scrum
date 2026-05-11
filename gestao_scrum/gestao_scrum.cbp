@@ -44,7 +44,14 @@
 		<Unit filename="include/Dominio/Papel.hpp" />
 		<Unit filename="include/Dominio/Prioridade.hpp" />
 		<Unit filename="include/Dominio/Senha.hpp" />
+		<Unit filename="include/Dominio/Tempo.hpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="include/Dominio/Texto.hpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="include/Entidade/Pessoa.hpp" />
+		<Unit filename="include/Entidade/Projeto.hpp" />
 		<Unit filename="src/Dominio/Codigo.cpp" />
 		<Unit filename="src/Dominio/Data.cpp" />
 		<Unit filename="src/Dominio/Email.cpp" />
@@ -53,12 +60,34 @@
 		<Unit filename="src/Dominio/Papel.cpp" />
 		<Unit filename="src/Dominio/Prioridade.cpp" />
 		<Unit filename="src/Dominio/Senha.cpp" />
+		<Unit filename="src/Dominio/Tempo.cpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="src/Dominio/Texto.cpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="src/Entidade/Pessoa.cpp" />
+		<Unit filename="src/Entidade/Projeto.cpp" />
 		<Unit filename="src/main.cpp" />
 		<Unit filename="src/mainPessoa.cpp">
 			<Option compile="0" />
 			<Option link="0" />
 		</Unit>
+		<Unit filename="test/ProjetoTest.cpp" />
+		<Unit filename="test/ProjetoTest.hpp" />
+		<Unit filename="test/TempoTest.cpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="test/TempoTest.hpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="test/TextoTest.cpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="test/TextoTest.hpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="test/main_test.cpp" />
 		<Extensions>
 			<DoxyBlocks>
 				<comment_style block="2" line="2" />
