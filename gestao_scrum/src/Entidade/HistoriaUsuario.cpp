@@ -1,81 +1,167 @@
+/**
+ * @file HistoriaUsuario.cpp
+ * @brief Implementacao da entidade HistoriaUsuario de forma encapsulada.
+ */
 #include "HistoriaUsuario.hpp"
+#include "Codigo.hpp"
+#include "Texto.hpp"
+#include "Tempo.hpp"
+#include "Prioridade.hpp"
+#include "Estado.hpp"
 
-// especificação exige que ao criar historia do usuario, o po associe ela o estado A FAZER
+using namespace std;
 
-HistoriaUsuario::HistoriaUsuario() {
-    Estado estadoInicial;
-    estadoInicial.setEstado("A FAZER");
-    this->estado = estadoInicial;
+/** @brief Estrutura interna que agrega os dominios da historia de usuario. */
+struct HistoriaUsuario::Impl {
+    Codigo codigo;          ///< Codigo identificador (chave primaria).
+    Texto titulo;           ///< Titulo da historia.
+    Texto papel;            ///< Papel (parte "como...").
+    Texto acao;             ///< Acao (parte "eu quero...").
+    Texto valor;            ///< Valor (parte "para...").
+    Tempo estimativa;       ///< Estimativa em dias.
+    Prioridade prioridade;  ///< Prioridade da historia.
+    Estado estado;          ///< Estado atual da historia.
+};
+
+// especificacao exige que ao criar historia do usuario, associe ela ao estado A FAZER
+
+/** @brief Constroi a historia de usuario com estado inicial "A FAZER". */
+HistoriaUsuario::HistoriaUsuario() : impl(new Impl()) {
+    impl->estado.setEstado("A FAZER");
 }
 
+/** @brief Libera a memoria da implementacao interna. */
 HistoriaUsuario::~HistoriaUsuario() {
-
+    delete impl;
 }
 
-// metodos set
-
-void HistoriaUsuario::setCodigo(const Codigo& codigo) {
-    this->codigo = codigo;
+/**
+ * @brief Define o codigo do plano de sprint (nao pode ser redefinido).
+ * @throw invalid_argument Se ja estiver definido ou for invalido.
+ */
+void HistoriaUsuario::setCodigo(const string& codigo) {
+    if (!impl->codigo.getCodigo().empty()) {
+        throw invalid_argument("Codigo ja definido para este projeto.");
+    }
+    impl->codigo.setCodigo(codigo);
 }
 
-void HistoriaUsuario::setTitulo(const Texto& titulo) {
-    this->titulo = titulo;
+/**
+ * @brief Define o titulo da historia.
+ * @throw invalid_argument Se o titulo for invalido.
+ */
+void HistoriaUsuario::setTitulo(const string& titulo) {
+    impl->titulo.setTexto(titulo);
 }
 
-void HistoriaUsuario::setPapel(const Texto& papel) {
-    this->papel = papel;
+/**
+ * @brief Define o papel da historia (parte "como...").
+ * @throw invalid_argument Se o papel for invalido.
+ */
+void HistoriaUsuario::setPapel(const string& papel) {
+    impl->papel.setTexto(papel);
 }
 
-void HistoriaUsuario::setAcao(const Texto& acao) {
-    this->acao = acao;
+/**
+ * @brief Define a acao da historia (parte "eu quero...").
+ * @throw invalid_argument Se a acao for invalida.
+ */
+void HistoriaUsuario::setAcao(const string& acao) {
+    impl->acao.setTexto(acao);
 }
 
-void HistoriaUsuario::setValor(const Texto& valor) {
-    this->valor = valor;
+/**
+ * @brief Define o valor da historia (parte "para...").
+ * @throw invalid_argument Se o valor for invalido.
+ */
+void HistoriaUsuario::setValor(const string& valor) {
+    impl->valor.setTexto(valor);
 }
 
-void HistoriaUsuario::setEstimativa(const Tempo& estimativa) {
-    this->estimativa = estimativa;
+/**
+ * @brief Define a estimativa da historia em dias.
+ * @throw invalid_argument Se estiver fora do intervalo 1 a 365.
+ */
+void HistoriaUsuario::setEstimativa(int estimativa) {
+    impl->estimativa.setTempo(estimativa);
 }
 
-void HistoriaUsuario::setPrioridade(const Prioridade& prioridade) {
-    this->prioridade = prioridade;
+/**
+ * @brief Define a prioridade da historia.
+ * @throw invalid_argument Se a prioridade for invalida.
+ */
+void HistoriaUsuario::setPrioridade(const string& prioridade) {
+    impl->prioridade.setPrioridade(prioridade);
 }
 
-void HistoriaUsuario::setEstado(const Estado& estado) {
-    this->estado = estado;
+/**
+ * @brief Define o estado da historia.
+ * @throw invalid_argument Se o estado for invalido.
+ */
+void HistoriaUsuario::setEstado(const string& estado) {
+    impl->estado.setEstado(estado);
 }
 
-// metodos get
-
-Codigo HistoriaUsuario::getCodigo() const {
-    return codigo;
+/**
+ * @brief Obtem o codigo da historia.
+ * @return Codigo atual (ex.: retorna "HU001").
+ */
+string HistoriaUsuario::getCodigo() const {
+    return impl->codigo.getCodigo();
 }
 
-Texto HistoriaUsuario::getTitulo() const {
-    return titulo;
+/**
+ * @brief Obtem o titulo da historia.
+ * @return Titulo atual (ex.: retorna "Criar conta de usuario").
+ */
+string HistoriaUsuario::getTitulo() const {
+    return impl->titulo.getTexto();
 }
 
-Texto HistoriaUsuario::getPapel() const {
-    return papel;
+/**
+ * @brief Obtem o papel da historia.
+ * @return Papel atual (ex.: retorna "Proprietario de Produto").
+ */
+string HistoriaUsuario::getPapel() const {
+    return impl->papel.getTexto();
 }
 
-Texto HistoriaUsuario::getAcao() const {
-    return acao;
+/**
+ * @brief Obtem a acao da historia.
+ * @return Acao atual (ex.: retorna "cadastrar uma conta").
+ */
+string HistoriaUsuario::getAcao() const {
+    return impl->acao.getTexto();
 }
 
-Texto HistoriaUsuario::getValor() const {
-    return valor;
+/**
+ * @brief Obtem o valor da historia.
+ * @return Valor atual (ex.: retorna "acessar os servicos").
+ */
+string HistoriaUsuario::getValor() const {
+    return impl->valor.getTexto();
 }
 
-Tempo HistoriaUsuario::getEstimativa() const {
-    return estimativa;
+/**
+ * @brief Obtem a estimativa da historia em dias.
+ * @return Numero de dias atual (ex.: retorna 5).
+ */
+int HistoriaUsuario::getEstimativa() const {
+    return impl->estimativa.getTempo();
 }
 
-Prioridade HistoriaUsuario::getPrioridade() const {
-    return prioridade;
+/**
+ * @brief Obtem a prioridade da historia.
+ * @return Prioridade atual (ex.: retorna "ALTA").
+ */
+string HistoriaUsuario::getPrioridade() const {
+    return impl->prioridade.getPrioridade();
 }
 
-Estado HistoriaUsuario::getEstado() const {
-    return estado;
+/**
+ * @brief Obtem o estado da historia.
+ * @return Estado atual (ex.: retorna "FAZENDO").
+ */
+string HistoriaUsuario::getEstado() const {
+    return impl->estado.getEstado();
 }

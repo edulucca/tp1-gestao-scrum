@@ -1,8 +1,17 @@
+/**
+ * @file Texto.cpp
+ * @brief Implementacao do dominio Texto (ate 40 caracteres de uso geral).
+ */
 #include "Texto.hpp"
 #include <cctype>
 
 using namespace std;
 
+/**
+ * @brief Atribui o texto apos validar o formato.
+ * @param texto Valor a armazenar (ex.: "Eu quero criar uma conta").
+ * @throw invalid_argument Se o formato for invalido (ex.: " texto").
+ */
 void Texto::setTexto(string texto) {
     if (!validar(texto)) {
         throw invalid_argument("Texto invalido.");
@@ -10,16 +19,29 @@ void Texto::setTexto(string texto) {
     this->texto = texto;
 }
 
+/**
+ * @brief Obtem o texto armazenado.
+ * @return Texto atual (ex.: retorna "Eu quero criar uma conta").
+ */
 string Texto::getTexto() const {
     return texto;
 }
 
-///Validações:
-///1. Texto não pode ter mais do que 40 caracteres.
+/**
+ * @brief Valida o formato do texto.
+ *
+ * Regras: ate 40 caracteres; apenas letras, digitos, virgula, ponto ou espaco;
+ * virgula/ponto nao seguidos por virgula ou ponto; espaco seguido por letra ou
+ * digito; nao inicia nem termina com virgula, ponto ou espaco.
+ * @return true para "Eu quero criar uma conta"; false para " texto" ou "fim.".
+ */
+
+///Validacoes:
+///1. Texto nao pode ter mais do que 40 caracteres.
 bool Texto::validar(const string& texto) const {
     if (texto.length() > 40) return false;
 
-///2. Primeiro e último caracteres não podem ser vírgula, ponto ou espaço.
+///2. Primeiro e ultimo caracteres nao podem ser virgula, ponto ou espaco.
     char primeiro = texto.front();
     char ultimo = texto.back();
     if (primeiro == ',' || primeiro == '.' || isspace(primeiro) || ultimo == ',' || ultimo == '.' || isspace(ultimo)) {
@@ -29,29 +51,30 @@ bool Texto::validar(const string& texto) const {
     for (size_t  i = 0; i < texto.length(); i++) {
         char c = texto[i];
 
-///3. Somente pode conter letras (maiúsculas e minúsculas, dígitos, vírgula, ponto e espaço)
+///3. Somente pode conter letras (maiusculas e minusculas, digitos, virgula, ponto e espaco)
         if (!(isalnum(c) || c == ',' || c == '.' || isspace(c))) {
             return false;
         }
 
-///4. Vírgula não pode ser seguida por vírgula ou ponto.
+///4. Virgula nao pode ser seguida por virgula ou ponto.
         if (c == ',') {
             if (i + 1 < texto.length() && (texto[i + 1] == ',' || texto[i + 1] == '.')) {
                 return false;
             }
         }
-///5. Ponto não pode ser seguido por vírgula ou ponto.
+///5. Ponto nao pode ser seguido por virgula ou ponto.
         if (c == '.') {
             if(i + 1 < texto.length() && (texto[i + 1] == ',' || texto[i + 1] == '.')) {
                 return false;
             }
         }
 
-///6. Espaço em branco deve ser seguido por letra ou dígito.
+///6. Espaco em branco deve ser seguido por letra ou digito.
         if (isspace(c)) {
             if(i + 1 < texto.length() && !isalnum(texto[i + 1])) {
                 return false;
             }
         }
     }
-            return true;
+    return true;
+}

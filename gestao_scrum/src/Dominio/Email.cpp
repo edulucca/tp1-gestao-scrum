@@ -1,9 +1,18 @@
+/**
+ * @file Email.cpp
+ * @brief Implementacao do dominio Email (parte-local\@dominio).
+ */
 #include "Email.hpp"
 #include <cctype>
 #include <stdexcept>
 
 using namespace std;
 
+/**
+ * @brief Atribui o email apos validar o formato.
+ * @param email Valor a armazenar (ex.: "luis.serra@unb.br").
+ * @throw invalid_argument Se o formato for invalido (ex.: ".luis@unb.br").
+ */
 void Email::setEmail(string email) {
     if (!validar(email)) {
         throw invalid_argument("Email invalido: nao atende aos criterios de formato.");
@@ -11,10 +20,22 @@ void Email::setEmail(string email) {
     this->email = email;
 }
 
+/**
+ * @brief Obtem o email armazenado.
+ * @return Email atual (ex.: retorna "luis.serra@unb.br").
+ */
 string Email::getEmail() const {
     return email;
 }
 
+/**
+ * @brief Valida o formato parte-local\@dominio.
+ *
+ * Verifica os limites (64/255), os caracteres permitidos e que ponto/hifen
+ * nao iniciem/terminem cada parte nem fiquem isolados.
+ * @param email Valor a validar.
+ * @return true para "luis.serra@unb.br"; false para ".luis@unb.br" ou "luis@-unb.br".
+ */
 bool Email::validar(const string& email) const {
     int parte_local = 0;
     int parte_dominio = 0;
@@ -51,7 +72,7 @@ bool Email::validar(const string& email) const {
             parte_dominio++;
             if (parte_dominio > 255) {
                 return false;
-            }      
+            }
         } else if (c == '.' && arrobaFound) {
             parte_dominio++;
             if (parte_dominio > 255) {

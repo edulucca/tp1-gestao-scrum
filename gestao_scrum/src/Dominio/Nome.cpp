@@ -1,9 +1,21 @@
+/**
+ * @file Nome.cpp
+ * @brief Implementacao do dominio Nome (ate 10 caracteres: letras e espacos).
+ */
 #include "Nome.hpp"
 #include <cctype>
 #include <stdexcept>
 
 using namespace std;
 
+/**
+ * @brief Valida o formato do nome.
+ *
+ * Regras: 1 a 10 caracteres; apenas letras (A-Z, a-z) ou espaco; nao inicia
+ * nem termina com espaco; cada espaco deve ser seguido por letra.
+ * @param nome Valor a validar.
+ * @return true para "Luis Serra"; false para " Luis", "Luis " ou "Luis123".
+ */
 bool Nome::validar(const string& nome) const {
     int len = nome.length();
 
@@ -19,6 +31,11 @@ bool Nome::validar(const string& nome) const {
     return true;
 }
 
+/**
+ * @brief Atribui o nome apos validar o formato.
+ * @param nome Valor a armazenar (ex.: "Luis Serra").
+ * @throw invalid_argument Se o formato for invalido (ex.: " Luis").
+ */
 void Nome::setNome(string nome) {
     if (!validar(nome)) {
         throw invalid_argument("Nome invalido: nao atende aos criterios de formato.");
@@ -26,6 +43,10 @@ void Nome::setNome(string nome) {
     this->nome = nome;
 }
 
+/**
+ * @brief Obtem o nome armazenado.
+ * @return Nome atual (ex.: retorna "Luis Serra").
+ */
 string Nome::getNome() const {
     return nome;
 }

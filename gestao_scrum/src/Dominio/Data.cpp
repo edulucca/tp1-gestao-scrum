@@ -1,9 +1,20 @@
+/**
+ * @file Data.cpp
+ * @brief Implementacao do dominio Data (DIA/MES/ANO, com anos bissextos).
+ */
 #include "Data.hpp"
 #include <cctype>
 #include <stdexcept>
 
 using namespace std;
 
+/**
+ * @brief Valida o formato DIA/MES/ANO, aceitando dia/mes com 1 ou 2 digitos.
+ *
+ * Regras: ANO de 2000 a 2999, MES de 1 a 12, DIA conforme o mes e bissexto.
+ * @param data Valor a validar.
+ * @return true para "29/02/2024"; false para "29/02/2023" ou "31/04/2025".
+ */
 bool Data::validar(const string& data) const {
     int len = data.length();
 
@@ -44,6 +55,10 @@ bool Data::validar(const string& data) const {
     return true;
 }
 
+/**
+ * @brief Atribui a data apos validar o formato.
+ * @throw invalid_argument Se a data for invalida (ex.: "31/04/2025").
+ */
 void Data::setData(string data) {
     if (!validar(data)) {
         throw invalid_argument("Data invalida: nao atende aos criterios de formato.");
@@ -51,6 +66,10 @@ void Data::setData(string data) {
     this->data = data;
 }
 
+/**
+ * @brief Obtem a data armazenada.
+ * @return Data atual (ex.: retorna "29/02/2024").
+ */
 string Data::getData() const {
     return data;
 }

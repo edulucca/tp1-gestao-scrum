@@ -1,0 +1,8 @@
+# Binários e objetos
+gestao_scrum/bin/
+gestao_scrum/obj/
+
+# Arquivos de layout do CodeBlocks (opções locais de interface)
+gestao_scrum/*.layout
+gestao_scrum/*.depend
+.claude

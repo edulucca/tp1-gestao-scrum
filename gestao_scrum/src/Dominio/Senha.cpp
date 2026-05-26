@@ -1,8 +1,17 @@
+/**
+ * @file Senha.cpp
+ * @brief Implementacao do dominio Senha (6 caracteres alternando letra/digito).
+ */
 #include "Senha.hpp"
 #include <cctype>
 
 using namespace std;
 
+/**
+ * @brief Atribui a senha apos validar o formato.
+ * @param senha Valor a armazenar (ex.: "a1B2c3").
+ * @throw invalid_argument Se o formato for invalido (ex.: "abc123").
+ */
 void Senha::setSenha(string senha) {
     if (!validar(senha)) {
         throw invalid_argument("Senha invalida.");
@@ -10,10 +19,23 @@ void Senha::setSenha(string senha) {
     this->senha = senha;
 }
 
+/**
+ * @brief Obtem a senha armazenada.
+ * @return Senha atual (ex.: retorna "a1B2c3").
+ */
 string Senha::getSenha() const {
     return senha;
 }
 
+/**
+ * @brief Valida o formato da senha.
+ *
+ * Regras: exatamente 6 caracteres (letras ou digitos); letra nao seguida por
+ * letra e digito nao seguido por digito; ao menos uma minuscula, uma maiuscula
+ * e um digito.
+ * @param s Valor a validar.
+ * @return true para "a1B2c3"; false para "abc123", "Ab1" ou "aaB1B2".
+ */
 bool Senha::validar(const string& s) const {
     if (s.length() != 6) return false;
 

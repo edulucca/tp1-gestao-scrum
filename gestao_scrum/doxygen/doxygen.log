@@ -1,0 +1,2 @@
+/usr/local/luis/unb/tp1-gestao-scrum/gestao_scrum/src/Dominio/Email.cpp:12: warning: argument 'email' from the argument list of Email::setEmail has multiple @param documentation sections
+/usr/local/luis/unb/tp1-gestao-scrum/gestao_scrum/src/Dominio/Nome.cpp:35: warning: argument 'nome' from the argument list of Nome::setNome has multiple @param documentation sections
