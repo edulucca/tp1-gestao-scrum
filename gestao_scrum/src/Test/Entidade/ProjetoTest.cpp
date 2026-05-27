@@ -16,12 +16,15 @@ void ProjetoTest::tearDown() {
 
 void ProjetoTest::testarCenarioSucesso() {
     try {
+        cout << "  [VALIDO] setNome(" << NOME_VALIDO << ")" << endl;
         projeto->setNome(NOME_VALIDO);
         assert(projeto->getNome() == NOME_VALIDO);
 
+        cout << "  [VALIDO] setDataInicio(" << DATA_VALIDA << ")" << endl;
         projeto->setDataInicio(DATA_VALIDA);
         assert(projeto->getDataInicio() == DATA_VALIDA);
 
+        cout << "  [VALIDO] setDataTermino(" << DATA_VALIDA_FIM << ")" << endl;
         projeto->setDataTermino(DATA_VALIDA_FIM);
         assert(projeto->getDataTermino() == DATA_VALIDA_FIM);
     } catch (invalid_argument& e) {
@@ -32,6 +35,7 @@ void ProjetoTest::testarCenarioSucesso() {
 
 void ProjetoTest::testarCenarioFalha() {
     try {
+        cout << "  [INVALIDO] setNome(" << NOME_INVALIDO << ")" << endl;
         projeto->setNome(NOME_INVALIDO);
         estado = FALHA;
         cout << "  [ERRO] Aceitou Nome invalido." << endl;
@@ -40,6 +44,7 @@ void ProjetoTest::testarCenarioFalha() {
     }
 
     try {
+        cout << "  [INVALIDO] setDataInicio(" << DATA_INVALIDA << ")" << endl;
         projeto->setDataInicio(DATA_INVALIDA);
         estado = FALHA;
         cout << "  [ERRO] Aceitou Data de Inicio invalida." << endl;

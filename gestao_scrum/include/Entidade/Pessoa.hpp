@@ -25,14 +25,14 @@ class Pessoa {
 
         /**
          * @brief Define o email da pessoa (chave primaria).
-         * @param email Email valido (ex.: "joao.silva@unb.br").
+         * @param email Email valido (ex.: "luis.serra@unb.br").
          * @throw invalid_argument Se o email for invalido ou ja estiver definido.
          */
         void setEmail(const string&);
 
         /**
          * @brief Define o nome da pessoa.
-         * @param nome Nome valido (ex.: "Joao Silva").
+         * @param nome Nome valido (ex.: "Luis Serra").
          * @throw invalid_argument Se o nome for invalido.
          */
         void setNome(const string&);
@@ -53,13 +53,13 @@ class Pessoa {
 
         /**
          * @brief Obtem o email da pessoa.
-         * @return Email atual (ex.: retorna "joao.silva@unb.br").
+         * @return Email atual (ex.: retorna "luis.serra@unb.br").
          */
         string getEmail() const;
 
         /**
          * @brief Obtem o nome da pessoa.
-         * @return Nome atual (ex.: retorna "Joao Silva").
+         * @return Nome atual (ex.: retorna "Luis Serra").
          */
         string getNome() const;
 

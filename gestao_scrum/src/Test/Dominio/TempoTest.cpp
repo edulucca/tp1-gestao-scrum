@@ -16,38 +16,44 @@ void TempoTest::tearDown() {
 
 void TempoTest::testarCenarioSucesso() {
     try {
+        cout << "  [VALIDO] setTempo(" << TEMPO_VALIDO1 << ")" << endl;
         tempo->setTempo(TEMPO_VALIDO1);
         assert(tempo->getTempo() == TEMPO_VALIDO1);
 
+        cout << "  [VALIDO] setTempo(" << TEMPO_VALIDO2 << ")" << endl;
         tempo->setTempo(TEMPO_VALIDO2);
         assert(tempo->getTempo() == TEMPO_VALIDO2);
 
+        cout << "  [VALIDO] setTempo(" << TEMPO_VALIDO3 << ")" << endl;
         tempo->setTempo(TEMPO_VALIDO3);
         assert(tempo->getTempo() == TEMPO_VALIDO3);
 
     } catch (invalid_argument& e) {
         estado = FALHA;
-        cout << " [ERRO] Cenário de sucesso falhou: " << e.what() << endl;
+        cout << " [ERRO] Cenï¿½rio de sucesso falhou: " << e.what() << endl;
     }
 }
 
 void TempoTest::testarCenarioFalha() {
     try {
+        cout << "  [INVALIDO] setTempo(" << TEMPO_INVALIDO1 << ")" << endl;
         tempo->setTempo(TEMPO_INVALIDO1);
         estado = FALHA;
-        cout << " [ERRO] Aceitou tempo inválido (0 dias)." << endl;
+        cout << " [ERRO] Aceitou tempo invï¿½lido (0 dias)." << endl;
     } catch (invalid_argument&) {}
 
     try {
+        cout << "  [INVALIDO] setTempo(" << TEMPO_INVALIDO2 << ")" << endl;
         tempo->setTempo(TEMPO_INVALIDO2);
         estado = FALHA;
-        cout << " [ERRO] Aceitou tempo inválido (366 dias), superior ao permitido." << endl;
+        cout << " [ERRO] Aceitou tempo invï¿½lido (366 dias), superior ao permitido." << endl;
     } catch (invalid_argument&) {}
 
     try {
+        cout << "  [INVALIDO] setTempo(" << TEMPO_INVALIDO3 << ")" << endl;
         tempo->setTempo(TEMPO_INVALIDO3);
         estado = FALHA;
-        cout << " [ERRO] Aceitou tempo inválido (- 10 dias): negativo e inferior ao permitido." << endl;
+        cout << " [ERRO] Aceitou tempo invï¿½lido (- 10 dias): negativo e inferior ao permitido." << endl;
     } catch (invalid_argument&) {}
 }
 

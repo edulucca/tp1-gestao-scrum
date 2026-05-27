@@ -16,6 +16,7 @@ void CodigoTest::tearDown() {
 
 void CodigoTest::testarCenarioSucesso() {
     try {
+        cout << "  [VALIDO] setCodigo(" << CODIGO_VALIDO << ")" << endl;
         codigo->setCodigo(CODIGO_VALIDO);
         assert(codigo->getCodigo() == CODIGO_VALIDO);
     } catch (invalid_argument& e) {
@@ -26,24 +27,28 @@ void CodigoTest::testarCenarioSucesso() {
 
 void CodigoTest::testarCenarioFalha() {
     try {
+        cout << "  [INVALIDO] setCodigo(" << CODIGO_INVALIDO1 << ")" << endl;
         codigo->setCodigo(CODIGO_INVALIDO1);
         estado = FALHA;
         cout << "  [ERRO] Aceitou codigo invalido (letras minusculas)." << endl;
     } catch (invalid_argument&) {}
 
     try {
+        cout << "  [INVALIDO] setCodigo(" << CODIGO_INVALIDO2 << ")" << endl;
         codigo->setCodigo(CODIGO_INVALIDO2);
         estado = FALHA;
         cout << "  [ERRO] Aceitou codigo invalido (apenas uma letra)." << endl;
     } catch (invalid_argument&) {}
 
     try {
+        cout << "  [INVALIDO] setCodigo(" << CODIGO_INVALIDO3 << ")" << endl;
         codigo->setCodigo(CODIGO_INVALIDO3);
         estado = FALHA;
         cout << "  [ERRO] Aceitou codigo invalido (menos de 5 caracteres)." << endl;
     } catch (invalid_argument&) {}
 
     try {
+        cout << "  [INVALIDO] setCodigo(" << CODIGO_INVALIDO4 << ")" << endl;
         codigo->setCodigo(CODIGO_INVALIDO4);
         estado = FALHA;
         cout << "  [ERRO] Aceitou codigo invalido (mais de 5 caracteres)." << endl;

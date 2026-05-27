@@ -12,7 +12,7 @@ using namespace std;
  * minusculas (a-z) ou espaco em branco. Cada espaco deve ser seguido por
  * letra; o primeiro e o ultimo caractere nao podem ser espaco.
  *
- * Exemplo valido: "Joao Silva". Exemplos invalidos: " Joao", "Joao ", "Ana123".
+ * Exemplo valido: "Luis Serra". Exemplos invalidos: " Luis", "Luis ", "Lui123".
  */
 class Nome {
     private:
@@ -27,14 +27,14 @@ class Nome {
     public:
         /**
          * @brief Atribui um nome apos validacao.
-         * @param nome Valor a armazenar (ex.: "Joao Silva").
-         * @throw invalid_argument Se o formato for invalido (ex.: " Joao").
+         * @param nome Valor a armazenar (ex.: "Luis Serra").
+         * @throw invalid_argument Se o formato for invalido (ex.: " Luis").
          */
         void setNome(string);
 
         /**
          * @brief Obtem o nome armazenado.
-         * @return Nome atual (ex.: retorna "Joao Silva").
+         * @return Nome atual (ex.: retorna "Luis Serra").
          */
         string getNome() const;
 };

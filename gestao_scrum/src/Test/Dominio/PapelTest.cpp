@@ -16,6 +16,7 @@ void PapelTest::tearDown() {
 
 void PapelTest::testarCenarioSucesso() {
     try {
+        cout << "  [VALIDO] setPapel(" << PAPEL_VALIDO << ")" << endl;
         papel->setPapel(PAPEL_VALIDO);
         assert(papel->getPapel() == PAPEL_VALIDO);
     } catch (invalid_argument& e) {
@@ -26,18 +27,21 @@ void PapelTest::testarCenarioSucesso() {
 
 void PapelTest::testarCenarioFalha() {
     try {
+        cout << "  [INVALIDO] setPapel(" << PAPEL_INVALIDO1 << ")" << endl;
         papel->setPapel(PAPEL_INVALIDO1);
         estado = FALHA;
         cout << "  [ERRO] Aceitou papel invalido (inexistente)." << endl;
     } catch (invalid_argument&) {}
 
     try {
+        cout << "  [INVALIDO] setPapel(" << PAPEL_INVALIDO2 << ")" << endl;
         papel->setPapel(PAPEL_INVALIDO2);
         estado = FALHA;
         cout << "  [ERRO] Aceitou papel invalido (caixa incorreta)." << endl;
     } catch (invalid_argument&) {}
 
     try {
+        cout << "  [INVALIDO] setPapel(" << PAPEL_INVALIDO3 << ")" << endl;
         papel->setPapel(PAPEL_INVALIDO3);
         estado = FALHA;
         cout << "  [ERRO] Aceitou papel invalido (vazio)." << endl;

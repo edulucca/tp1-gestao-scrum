@@ -16,6 +16,7 @@ void NomeTest::tearDown() {
 
 void NomeTest::testarCenarioSucesso() {
     try {
+        cout << "  [VALIDO] setNome(" << NOME_VALIDO << ")" << endl;
         nome->setNome(NOME_VALIDO);
         assert(nome->getNome() == NOME_VALIDO);
     } catch (invalid_argument& e) {
@@ -26,24 +27,28 @@ void NomeTest::testarCenarioSucesso() {
 
 void NomeTest::testarCenarioFalha() {
     try {
+        cout << "  [INVALIDO] setNome(" << NOME_INVALIDO1 << ")" << endl;
         nome->setNome(NOME_INVALIDO1);
         estado = FALHA;
         cout << "  [ERRO] Aceitou nome invalido (inicia com espaco)." << endl;
     } catch (invalid_argument&) {}
 
     try {
+        cout << "  [INVALIDO] setNome(" << NOME_INVALIDO2 << ")" << endl;
         nome->setNome(NOME_INVALIDO2);
         estado = FALHA;
         cout << "  [ERRO] Aceitou nome invalido (termina com espaco)." << endl;
     } catch (invalid_argument&) {}
 
     try {
+        cout << "  [INVALIDO] setNome(" << NOME_INVALIDO3 << ")" << endl;
         nome->setNome(NOME_INVALIDO3);
         estado = FALHA;
         cout << "  [ERRO] Aceitou nome invalido (mais de 10 caracteres)." << endl;
     } catch (invalid_argument&) {}
 
     try {
+        cout << "  [INVALIDO] setNome(" << NOME_INVALIDO4 << ")" << endl;
         nome->setNome(NOME_INVALIDO4);
         estado = FALHA;
         cout << "  [ERRO] Aceitou nome invalido (contem digitos)." << endl;

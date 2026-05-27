@@ -14,7 +14,7 @@ using namespace std;
  * Dominio: uma ou mais partes separadas por ponto; cada parte com letras (a-z),
  * digitos (0-9) ou hifen; nao pode iniciar nem terminar com hifen; maximo 255.
  *
- * Exemplo valido: "joao.silva@unb.br". Exemplos invalidos: ".joao@unb.br", "joao@-unb.br".
+ * Exemplo valido: "luis.serra@unb.br". Exemplos invalidos: ".luis@unb.br", "luis@-unb.br".
  */
 class Email {
     private:
@@ -30,13 +30,13 @@ class Email {
         /**
          * @brief Atribui um email apos validacao.
          * @param email Valor a armazenar (ex.: "joao.silva@unb.br").
-         * @throw invalid_argument Se o formato for invalido (ex.: ".joao@unb.br").
+         * @throw invalid_argument Se o formato for invalido (ex.: ".luis@unb.br").
          */
         void setEmail(string);
 
         /**
          * @brief Obtem o email armazenado.
-         * @return Email atual (ex.: retorna "joao.silva@unb.br").
+         * @return Email atual (ex.: retorna "luis.serra@unb.br").
          */
         string getEmail() const;
 };

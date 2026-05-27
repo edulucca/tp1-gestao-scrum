@@ -16,6 +16,7 @@ void EstadoTest::tearDown() {
 
 void EstadoTest::testarCenarioSucesso() {
     try {
+        cout << "  [VALIDO] setEstado(" << ESTADO_VALIDO << ")" << endl;
         estadoObj->setEstado(ESTADO_VALIDO);
         assert(estadoObj->getEstado() == ESTADO_VALIDO);
     } catch (invalid_argument& e) {
@@ -26,18 +27,21 @@ void EstadoTest::testarCenarioSucesso() {
 
 void EstadoTest::testarCenarioFalha() {
     try {
+        cout << "  [INVALIDO] setEstado(" << ESTADO_INVALIDO1 << ")" << endl;
         estadoObj->setEstado(ESTADO_INVALIDO1);
         estado = FALHA;
         cout << "  [ERRO] Aceitou estado invalido (valor inexistente)." << endl;
     } catch (invalid_argument&) {}
 
     try {
+        cout << "  [INVALIDO] setEstado(" << ESTADO_INVALIDO2 << ")" << endl;
         estadoObj->setEstado(ESTADO_INVALIDO2);
         estado = FALHA;
         cout << "  [ERRO] Aceitou estado invalido (caixa incorreta)." << endl;
     } catch (invalid_argument&) {}
 
     try {
+        cout << "  [INVALIDO] setEstado(" << ESTADO_INVALIDO3 << ")" << endl;
         estadoObj->setEstado(ESTADO_INVALIDO3);
         estado = FALHA;
         cout << "  [ERRO] Aceitou estado invalido (vazio)." << endl;

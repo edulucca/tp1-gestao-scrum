@@ -16,6 +16,7 @@ void EmailTest::tearDown() {
 
 void EmailTest::testarCenarioSucesso() {
     try {
+        cout << "  [VALIDO] setEmail(" << EMAIL_VALIDO << ")" << endl;
         email->setEmail(EMAIL_VALIDO);
         assert(email->getEmail() == EMAIL_VALIDO);
     } catch (invalid_argument& e) {
@@ -26,24 +27,28 @@ void EmailTest::testarCenarioSucesso() {
 
 void EmailTest::testarCenarioFalha() {
     try {
+        cout << "  [INVALIDO] setEmail(" << EMAIL_INVALIDO1 << ")" << endl;
         email->setEmail(EMAIL_INVALIDO1);
         estado = FALHA;
         cout << "  [ERRO] Aceitou email invalido (inicia com ponto)." << endl;
     } catch (invalid_argument&) {}
 
     try {
+        cout << "  [INVALIDO] setEmail(" << EMAIL_INVALIDO2 << ")" << endl;
         email->setEmail(EMAIL_INVALIDO2);
         estado = FALHA;
         cout << "  [ERRO] Aceitou email invalido (sem arroba)." << endl;
     } catch (invalid_argument&) {}
 
     try {
+        cout << "  [INVALIDO] setEmail(" << EMAIL_INVALIDO3 << ")" << endl;
         email->setEmail(EMAIL_INVALIDO3);
         estado = FALHA;
         cout << "  [ERRO] Aceitou email invalido (sem parte local)." << endl;
     } catch (invalid_argument&) {}
 
     try {
+        cout << "  [INVALIDO] setEmail(" << EMAIL_INVALIDO4 << ")" << endl;
         email->setEmail(EMAIL_INVALIDO4);
         estado = FALHA;
         cout << "  [ERRO] Aceitou email invalido (parte do dominio termina em hifen)." << endl;

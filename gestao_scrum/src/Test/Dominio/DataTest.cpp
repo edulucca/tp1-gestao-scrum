@@ -16,6 +16,7 @@ void DataTest::tearDown() {
 
 void DataTest::testarCenarioSucesso() {
     try {
+        cout << "  [VALIDO] setData(" << DATA_VALIDA << ")" << endl;
         data->setData(DATA_VALIDA);
         assert(data->getData() == DATA_VALIDA);
     } catch (invalid_argument& e) {
@@ -26,24 +27,28 @@ void DataTest::testarCenarioSucesso() {
 
 void DataTest::testarCenarioFalha() {
     try {
+        cout << "  [INVALIDO] setData(" << DATA_INVALIDA1 << ")" << endl;
         data->setData(DATA_INVALIDA1);
         estado = FALHA;
         cout << "  [ERRO] Aceitou data invalida (dia/mes fora do intervalo)." << endl;
     } catch (invalid_argument&) {}
 
     try {
+        cout << "  [INVALIDO] setData(" << DATA_INVALIDA2 << ")" << endl;
         data->setData(DATA_INVALIDA2);
         estado = FALHA;
         cout << "  [ERRO] Aceitou data invalida (31 de abril)." << endl;
     } catch (invalid_argument&) {}
 
     try {
+        cout << "  [INVALIDO] setData(" << DATA_INVALIDA3 << ")" << endl;
         data->setData(DATA_INVALIDA3);
         estado = FALHA;
         cout << "  [ERRO] Aceitou data invalida (29/02 em ano nao bissexto)." << endl;
     } catch (invalid_argument&) {}
 
     try {
+        cout << "  [INVALIDO] setData(" << DATA_INVALIDA4 << ")" << endl;
         data->setData(DATA_INVALIDA4);
         estado = FALHA;
         cout << "  [ERRO] Aceitou data invalida (formato sem barras)." << endl;
