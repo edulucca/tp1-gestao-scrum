@@ -6,6 +6,7 @@ using namespace std;
 
 /**
  * @class Nome
+ * @ingroup dominio
  * @brief Dominio que representa um nome de pessoa.
  *
  * Formato valido: ate 10 caracteres, contendo letras maiusculas (A-Z),

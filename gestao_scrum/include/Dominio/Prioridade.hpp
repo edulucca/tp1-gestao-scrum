@@ -6,6 +6,7 @@ using namespace std;
 
 /**
  * @class Prioridade
+ * @ingroup dominio
  * @brief Dominio que representa a prioridade de uma historia de usuario.
  *
  * Valores validos (unicos aceitos): "ALTA", "MEDIA", "BAIXA".

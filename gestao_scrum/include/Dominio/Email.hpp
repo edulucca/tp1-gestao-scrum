@@ -6,6 +6,7 @@ using namespace std;
 
 /**
  * @class Email
+ * @ingroup dominio
  * @brief Dominio que representa um endereco de email no formato parte-local\@dominio.
  *
  * Parte local: letras (a-z), digitos (0-9), ponto ou hifen; nao pode iniciar

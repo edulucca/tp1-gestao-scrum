@@ -6,6 +6,7 @@ using namespace std;
 
 /**
  * @class Data
+ * @ingroup dominio
  * @brief Dominio que representa uma data no formato DIA/MES/ANO.
  *
  * Formato valido: "DD/MM/AAAA", com DIA de 1 a 31, MES de 01 a 12 e

@@ -18,6 +18,12 @@
 #include "PlanoSprintTest.hpp"
 #include "ProjetoTest.hpp"
 
+// Testes de servico e apresentacao
+#include "MSA_AuthServiceStubTest.hpp"
+#include "MSC_CadastroServiceStubTest.hpp"
+#include "MSG_GestaoServiceStubTest.hpp"
+#include "CommandTest.hpp"
+
 using namespace std;
 
 int main() {
@@ -43,6 +49,14 @@ int main() {
     PessoaTest pessoaTest;            if (pessoaTest.run() != 0) todosSucesso = false;
     PlanoSprintTest planoTest;        if (planoTest.run() != 0) todosSucesso = false;
     ProjetoTest projetoTest;          if (projetoTest.run() != 0) todosSucesso = false;
+
+    cout << endl << "--- Servicos ---" << endl;
+    MSA_AuthServiceStubTest msaStubTest; if (msaStubTest.run() != 0) todosSucesso = false;
+    MSC_CadastroServiceStubTest mscStubTest; if (mscStubTest.run() != 0) todosSucesso = false;
+    MSG_GestaoServiceStubTest msgStubTest; if (msgStubTest.run() != 0) todosSucesso = false;
+
+    cout << endl << "--- Apresentacao ---" << endl;
+    CommandTest commandTest; if (commandTest.run() != 0) todosSucesso = false;
 
     cout << endl << "=== RESULTADO FINAL ===" << endl;
 

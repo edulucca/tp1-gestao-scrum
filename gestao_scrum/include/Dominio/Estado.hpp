@@ -6,6 +6,7 @@ using namespace std;
 
 /**
  * @class Estado
+ * @ingroup dominio
  * @brief Dominio que representa o estado de uma historia de usuario.
  *
  * Valores validos (unicos aceitos): "A FAZER", "FAZENDO", "FEITO".

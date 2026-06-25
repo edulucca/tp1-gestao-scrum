@@ -5,6 +5,7 @@ using namespace std;
 
 /**
  * @class Pessoa
+ * @ingroup entidade
  * @brief Entidade que representa um usuario do sistema.
  *
  * Agrega os dominios Email (chave primaria), Nome, Senha e Papel. Os valores

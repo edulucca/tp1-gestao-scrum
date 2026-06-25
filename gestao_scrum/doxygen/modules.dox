@@ -1,0 +1,123 @@
+/**
+ * @defgroup dominio Domínio
+ * @brief Classes de valor com regras de formato e validação.
+ *
+ * Cada domínio encapsula um tipo atômico (email, senha, código, etc.).
+ * Métodos `set` lançam `invalid_argument` quando o formato é inválido.
+ * Usados pelas controladoras na validação de entrada e pelas entidades
+ * internamente.
+ *
+ * @see @ref entidade
+ * @{
+ */
+
+/** @} */
+
+/**
+ * @defgroup entidade Entidades
+ * @brief Objetos de negócio que agregam domínios.
+ *
+ * Representam Pessoa, Projeto, Plano de Sprint e História de Usuário.
+ * Atributos são instâncias de domínios; acesso via métodos set/get públicos.
+ *
+ * @see @ref dominio
+ * @{
+ */
+
+/** @} */
+
+/**
+ * @defgroup apresentacao Apresentação
+ * @brief Interface com o usuário e validação de entrada.
+ *
+ * Controladoras `CntrIU_*` leem dados do terminal, validam com domínios
+ * e delegam operações aos serviços via interfaces `I*Service` ou comandos.
+ * @{
+ */
+
+/**
+ * @defgroup maa MAA — Autenticação
+ * @ingroup apresentacao
+ * @brief Login e logout do usuário.
+ * @{
+ */
+
+/** @} */
+
+/**
+ * @defgroup mac MAC — Cadastro
+ * @ingroup apresentacao
+ * @brief Cadastro e manutenção de pessoas.
+ * @{
+ */
+
+/** @} */
+
+/**
+ * @defgroup mag MAG — Gestão
+ * @ingroup apresentacao
+ * @brief Gestão de projetos, planos de sprint e histórias.
+ * @{
+ */
+
+/** @} */
+
+/** @} */
+
+/**
+ * @defgroup command Command
+ * @brief Padrão Command para desacoplar ações da interface dos serviços.
+ *
+ * @see @ref ICommand
+ * @see @ref Invoker
+ * @{
+ */
+
+/** @} */
+
+/**
+ * @defgroup servico Serviços
+ * @brief Lógica de negócio e armazenamento de dados.
+ *
+ * Interfaces `I*Service` definem contratos; stubs implementam operações
+ * com armazenamento em memória para desenvolvimento e testes.
+ * @{
+ */
+
+/**
+ * @defgroup msa MSA — Autenticação
+ * @ingroup servico
+ * @brief Validação de credenciais de acesso.
+ * @{
+ */
+
+/** @} */
+
+/**
+ * @defgroup msc MSC — Cadastro
+ * @ingroup servico
+ * @brief CRUD e listagem de pessoas; validação de credenciais.
+ * @{
+ */
+
+/** @} */
+
+/**
+ * @defgroup msg MSG — Gestão
+ * @ingroup servico
+ * @brief CRUD e consultas sobre projetos, planos e histórias.
+ * @{
+ */
+
+/** @} */
+
+/**
+ * @defgroup autorizacao Autorização
+ * @ingroup servico
+ * @brief Regras de permissão por papel e serviço.
+ * @{
+ */
+
+/** @} */
+
+/** @} */

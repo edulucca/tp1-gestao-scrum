@@ -5,6 +5,7 @@
 #include "Nome.hpp"
 #include <cctype>
 #include <stdexcept>
+#include <string>
 
 using namespace std;
 
@@ -37,8 +38,18 @@ bool Nome::validar(const string& nome) const {
  * @throw invalid_argument Se o formato for invalido (ex.: " Luis").
  */
 void Nome::setNome(string nome) {
+    int len = nome.length();
+
+    if (len == 0) {
+        throw invalid_argument("Nome invalido: o nome nao pode ser vazio.");
+    }
+    if (len > 10) {
+        throw invalid_argument(
+            "Nome invalido: maximo de 10 caracteres (informado: " + to_string(len) + ").");
+    }
     if (!validar(nome)) {
-        throw invalid_argument("Nome invalido: nao atende aos criterios de formato.");
+        throw invalid_argument(
+            "Nome invalido: use apenas letras e espacos, sem espaco no inicio ou fim.");
     }
     this->nome = nome;
 }

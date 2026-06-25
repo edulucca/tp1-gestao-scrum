@@ -17,6 +17,14 @@
 					<Add directory="include/Dominio" />
 					<Add directory="src/Entidade" />
 					<Add directory="include/Entidade" />
+					<Add directory="include/Command" />
+					<Add directory="include/Service/MSA" />
+					<Add directory="include/Service/MSC" />
+					<Add directory="include/Service/MSG" />
+					<Add directory="include/Service/Autorizacao" />
+					<Add directory="include/Apresentacao/MAA" />
+					<Add directory="include/Apresentacao/MAC" />
+					<Add directory="include/Apresentacao/MAG" />
 					<Add directory="include/Test/Dominio" />
 					<Add directory="include/Test/Entidade" />
 				</Compiler>
@@ -32,6 +40,14 @@
 					<Add directory="include/Dominio" />
 					<Add directory="src/Entidade" />
 					<Add directory="include/Entidade" />
+					<Add directory="include/Command" />
+					<Add directory="include/Service/MSA" />
+					<Add directory="include/Service/MSC" />
+					<Add directory="include/Service/MSG" />
+					<Add directory="include/Service/Autorizacao" />
+					<Add directory="include/Apresentacao/MAA" />
+					<Add directory="include/Apresentacao/MAC" />
+					<Add directory="include/Apresentacao/MAG" />
 					<Add directory="include/Test/Dominio" />
 					<Add directory="include/Test/Entidade" />
 				</Compiler>
@@ -50,8 +66,18 @@
 					<Add directory="include/Dominio" />
 					<Add directory="src/Entidade" />
 					<Add directory="include/Entidade" />
+					<Add directory="include/Command" />
+					<Add directory="include/Service/MSA" />
+					<Add directory="include/Service/MSC" />
+					<Add directory="include/Service/MSG" />
+					<Add directory="include/Service/Autorizacao" />
+					<Add directory="include/Apresentacao/MAA" />
+					<Add directory="include/Apresentacao/MAC" />
+					<Add directory="include/Apresentacao/MAG" />
 					<Add directory="include/Test/Dominio" />
 					<Add directory="include/Test/Entidade" />
+					<Add directory="include/Test/Service" />
+					<Add directory="include/Test/Apresentacao" />
 				</Compiler>
 			</Target>
 		</Build>
@@ -59,6 +85,14 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="include/Apresentacao/MAA/CntrIU_MAA.hpp" />
+		<Unit filename="include/Apresentacao/MAA/MAA_Commands.hpp" />
+		<Unit filename="include/Apresentacao/MAC/CntrIU_MAC.hpp" />
+		<Unit filename="include/Apresentacao/MAC/MAC_Commands.hpp" />
+		<Unit filename="include/Apresentacao/MAG/CntrIU_MAG.hpp" />
+		<Unit filename="include/Apresentacao/MAG/MAG_Commands.hpp" />
+		<Unit filename="include/Command/ICommand.hpp" />
+		<Unit filename="include/Command/Invoker.hpp" />
 		<Unit filename="include/Dominio/Codigo.hpp" />
 		<Unit filename="include/Dominio/Data.hpp" />
 		<Unit filename="include/Dominio/Email.hpp" />
@@ -73,6 +107,16 @@
 		<Unit filename="include/Entidade/Pessoa.hpp" />
 		<Unit filename="include/Entidade/PlanoSprint.hpp" />
 		<Unit filename="include/Entidade/Projeto.hpp" />
+		<Unit filename="include/Service/Autorizacao/ServicoAutorizacao.hpp" />
+		<Unit filename="include/Service/MSA/IMSA_AuthService.hpp" />
+		<Unit filename="include/Service/MSA/MSA_AuthServiceStub.hpp" />
+		<Unit filename="include/Service/MSC/IMSC_CadastroService.hpp" />
+		<Unit filename="include/Service/MSC/MSC_CadastroServiceStub.hpp" />
+		<Unit filename="include/Service/MSG/IMSG_GestaoService.hpp" />
+		<Unit filename="include/Service/MSG/MSG_GestaoServiceStub.hpp" />
+		<Unit filename="include/Test/Apresentacao/CommandTest.hpp">
+			<Option target="Tests" />
+		</Unit>
 		<Unit filename="include/Test/Dominio/CodigoTest.hpp">
 			<Option target="Tests" />
 		</Unit>
@@ -115,6 +159,33 @@
 		<Unit filename="include/Test/Entidade/ProjetoTest.hpp">
 			<Option target="Tests" />
 		</Unit>
+		<Unit filename="include/Test/Service/MSA_AuthServiceStubTest.hpp">
+			<Option target="Tests" />
+		</Unit>
+		<Unit filename="include/Test/Service/MSC_CadastroServiceStubTest.hpp">
+			<Option target="Tests" />
+		</Unit>
+		<Unit filename="include/Test/Service/MSG_GestaoServiceStubTest.hpp">
+			<Option target="Tests" />
+		</Unit>
+		<Unit filename="src/Apresentacao/MAA/CntrIU_MAA.cpp">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="src/Apresentacao/MAA/cmd_Login.cpp" />
+		<Unit filename="src/Apresentacao/MAC/CntrIU_MAC.cpp">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="src/Apresentacao/MAC/cmd_CriarPessoa.cpp" />
+		<Unit filename="src/Apresentacao/MAC/cmd_ListarPessoas.cpp" />
+		<Unit filename="src/Apresentacao/MAG/CntrIU_MAG.cpp">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="src/Apresentacao/MAG/cmd_ListarHistorias.cpp" />
+		<Unit filename="src/Apresentacao/MAG/cmd_AtualizarHistoria.cpp" />
+		<Unit filename="src/Command/Invoker.cpp" />
 		<Unit filename="src/Dominio/Codigo.cpp" />
 		<Unit filename="src/Dominio/Data.cpp" />
 		<Unit filename="src/Dominio/Email.cpp" />
@@ -129,6 +200,13 @@
 		<Unit filename="src/Entidade/Pessoa.cpp" />
 		<Unit filename="src/Entidade/PlanoSprint.cpp" />
 		<Unit filename="src/Entidade/Projeto.cpp" />
+		<Unit filename="src/Service/Autorizacao/ServicoAutorizacao.cpp" />
+		<Unit filename="src/Service/MSA/MSA_AuthServiceStub.cpp" />
+		<Unit filename="src/Service/MSC/MSC_CadastroServiceStub.cpp" />
+		<Unit filename="src/Service/MSG/MSG_GestaoServiceStub.cpp" />
+		<Unit filename="src/Test/Apresentacao/CommandTest.cpp">
+			<Option target="Tests" />
+		</Unit>
 		<Unit filename="src/Test/Dominio/CodigoTest.cpp">
 			<Option target="Tests" />
 		</Unit>
@@ -171,10 +249,19 @@
 		<Unit filename="src/Test/Entidade/ProjetoTest.cpp">
 			<Option target="Tests" />
 		</Unit>
+		<Unit filename="src/Test/Service/MSA_AuthServiceStubTest.cpp">
+			<Option target="Tests" />
+		</Unit>
+		<Unit filename="src/Test/Service/MSC_CadastroServiceStubTest.cpp">
+			<Option target="Tests" />
+		</Unit>
+		<Unit filename="src/Test/Service/MSG_GestaoServiceStubTest.cpp">
+			<Option target="Tests" />
+		</Unit>
 		<Unit filename="src/Test/main_test.cpp">
 			<Option target="Tests" />
 		</Unit>
-		<Unit filename="src/main.cpp">
+		<Unit filename="src/main_cli.cpp">
 			<Option target="Debug" />
 			<Option target="Release" />
 		</Unit>

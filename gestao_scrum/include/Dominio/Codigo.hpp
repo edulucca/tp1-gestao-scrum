@@ -6,6 +6,7 @@ using namespace std;
 
 /**
  * @class Codigo
+ * @ingroup dominio
  * @brief Dominio que representa um codigo identificador.
  *
  * Formato valido: exatamente 5 caracteres, sendo os 2 primeiros letras

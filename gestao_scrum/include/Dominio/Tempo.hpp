@@ -9,6 +9,7 @@ using namespace std;
 
 /**
  * @class Tempo
+ * @ingroup dominio
  * @brief Dominio que representa uma contagem em dias.
  *
  * Formato valido: numero inteiro de 1 a 365.

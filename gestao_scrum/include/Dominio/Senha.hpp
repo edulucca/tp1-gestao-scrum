@@ -6,6 +6,7 @@ using namespace std;
 
 /**
  * @class Senha
+ * @ingroup dominio
  * @brief Dominio que representa uma senha de acesso.
  *
  * Formato valido: exatamente 6 caracteres, cada um letra (a-z ou A-Z) ou

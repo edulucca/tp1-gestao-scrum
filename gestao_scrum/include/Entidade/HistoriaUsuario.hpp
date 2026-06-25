@@ -5,6 +5,7 @@ using namespace std;
 
 /**
  * @class HistoriaUsuario
+ * @ingroup entidade
  * @brief Entidade que representa uma historia de usuario (user story).
  *
  * Agrega o Codigo (chave primaria), o Titulo e a descricao composta por Papel

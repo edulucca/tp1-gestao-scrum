@@ -4,6 +4,7 @@
  */
 #include "Senha.hpp"
 #include <cctype>
+#include <string>
 
 using namespace std;
 
@@ -13,8 +14,14 @@ using namespace std;
  * @throw invalid_argument Se o formato for invalido (ex.: "abc123").
  */
 void Senha::setSenha(string senha) {
+    if (senha.length() != 6) {
+        throw invalid_argument(
+            "Senha invalida: deve ter exatamente 6 caracteres (informado: "
+            + to_string(senha.length()) + ").");
+    }
     if (!validar(senha)) {
-        throw invalid_argument("Senha invalida.");
+        throw invalid_argument(
+            "Senha invalida: alterne letras e digitos e inclua minuscula, maiuscula e digito.");
     }
     this->senha = senha;
 }

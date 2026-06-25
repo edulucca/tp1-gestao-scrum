@@ -5,6 +5,7 @@ using namespace std;
 
 /**
  * @class Projeto
+ * @ingroup entidade
  * @brief Entidade que representa um projeto gerido pelo processo Scrum.
  *
  * Agrega os dominios Codigo (chave primaria), Nome e duas Datas (inicio e

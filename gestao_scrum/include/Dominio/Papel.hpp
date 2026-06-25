@@ -6,6 +6,7 @@ using namespace std;
 
 /**
  * @class Papel
+ * @ingroup dominio
  * @brief Dominio que representa o papel (role) de uma pessoa no projeto.
  *
  * Valores validos (unicos aceitos): "DESENVOLVEDOR", "MESTRE SCRUM",

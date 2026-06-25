@@ -1,0 +1,120 @@
+/**
+ * @mainpage Gestão Scrum — Documentação do Sistema
+ *
+ * @section intro_sec Introdução
+ *
+ * Este é o sistema de **gestão de projetos Scrum** desenvolvido para a disciplina
+ * Técnicas de Programação 1. O código segue uma arquitetura em camadas
+ * com separação entre validação de dados, lógica de negócio, lógica de
+ * aplicação e interface CLI com o usuário.
+ *
+ * @section inicio_sec Por onde começar?
+ *
+ *
+ * <ol>
+ * <li><b>Ponto de entrada</b> — leia @ref main_cli.cpp para ver como os módulos
+ *     são relacionados.</li>
+ * <li><b>Domínio</b> — grupo @ref dominio "Domínio" — regras de formatação de cada propriedade
+ *     (email, senha, código, etc.). Aqui ocorre as validações de entrada.</li>
+ * <li><b>Entidades</b> — grupo @ref entidade "Entidades" — objetos de negócio que agregam
+ *     domínios (@ref Pessoa, @ref Projeto, @ref HistoriaUsuario, @ref PlanoSprint).</li>
+ * <li><b>Serviços</b> — grupo @ref servico "Serviços" — interfaces `I*Service` e stubs que
+ *     implementam lógica de negócio e armazenamento em memória.</li>
+ * <li><b>Apresentação</b> — grupo @ref apresentacao "Apresentação" — controladoras `CntrIU_*`
+ *     que leem dados do usuário, validam com domínios e delegam aos serviços.</li>
+ * <li><b>Command</b> — grupo @ref command "Command" — padrão Command que desacopla ações
+ *     da interface dos serviços (@ref ICommand, @ref Invoker).</li>
+ * </ol>
+ *
+ * @section arquitetura_sec Arquitetura em camadas
+ *
+ * O fluxo principal do sistema é:
+ *
+ * @verbatim
+ *  Usuário (terminal)
+ *       │
+ *       ▼
+ *  CntrIU_MAA / CntrIU_MAC / CntrIU_MAG   ← Apresentação (valida entrada)
+ *       │
+ *       ▼
+ *  LoginCommand, CriarPessoaCommand, ...  ← Command (opcional)
+ *       │
+ *       ▼
+ *  IMSA_AuthService / IMSC_CadastroService / IMSG_GestaoService
+ *       │
+ *       ▼
+ *  MSA_AuthServiceStub / MSC_* / MSG_*    ← Serviço (lógica + armazenamento)
+ *       │
+ *       ▼
+ *  Entidades + Domínios                     ← Modelo de dados
+ * @endverbatim
+ *
+ * A apresentação apenas das interfaces `I*Service`.
+ *
+ * @section modulos_sec Módulos do sistema
+ *
+ * | Sigla | Camada | Controladora / Interface | Implementação | Responsabilidade |
+ * |-------|--------|--------------------------|---------------|------------------|
+ * | MAA | Apresentação | @ref CntrIU_MAA | — | Login e logout |
+ * | MAC | Apresentação | @ref CntrIU_MAC | — | Cadastro de pessoas |
+ * | MAG | Apresentação | @ref CntrIU_MAG | — | Gestão Scrum (projetos, planos, histórias) |
+ * | MSA | Serviço | @ref IMSA_AuthService | @ref MSA_AuthServiceStub | Autenticação |
+ * | MSC | Serviço | @ref IMSC_CadastroService | @ref MSC_CadastroServiceStub | CRUD de pessoas |
+ * | MSG | Serviço | @ref IMSG_GestaoService | @ref MSG_GestaoServiceStub | Gestão de artefatos Scrum |
+ *
+ * Cada módulo de apresentação conversa com exatamente um módulo de
+ * serviço correspondente.
+ *
+ * @section dominio_resumo_sec Domínio — classes de valor
+ *
+ * | Classe | Exemplo válido | Documentação |
+ * |--------|----------------|--------------|
+ * | @ref Email | luis.serra@unb.br | Endereço de email |
+ * | @ref Senha | a1B2c3 | Senha de acesso (6 caracteres) |
+ * | @ref Nome | Luis Serra | Nome de pessoa ou projeto |
+ * | @ref Papel | MESTRE SCRUM | Papel no time Scrum |
+ * | @ref Codigo | AB123 | Identificador (2 letras + 3 dígitos) |
+ * | @ref Estado | A FAZER | Estado de uma história |
+ * | @ref Prioridade | ALTA | Prioridade de história |
+ * | @ref Texto | Criar conta de usuario | Texto curto de uso geral |
+ * | @ref Tempo | 5 | Quantidade de dias (1–365) |
+ * | @ref Data | 15/10/2024 | Data DD/MM/AAAA |
+ *
+ * @section entidade_resumo_sec Entidades — objetos de negócio
+ *
+ * | Entidade | Chave | Atributos principais |
+ * |----------|-------|----------------------|
+ * | @ref Pessoa | @ref Email | Nome, Senha, Papel |
+ * | @ref Projeto | @ref Codigo | Nome, datas de início e término |
+ * | @ref PlanoSprint | @ref Codigo | Objetivo, capacidade (dias) |
+ * | @ref HistoriaUsuario | @ref Codigo | Título, papel/ação/valor, estimativa, prioridade, estado |
+ *
+ *
+ * @section credenciais_sec Credenciais de demonstração
+ *
+ * Usuário padrão pré-cadastrado no stub MSC:
+ *
+ * - **Email:** luis.serra@unb.br
+ * - **Senha:** a1B2c3
+ * - **Papel:** MESTRE SCRUM
+ *
+ * @section pastas_sec Estrutura de pastas do código-fonte
+ *
+ * | Pasta | Conteúdo |
+ * |-------|----------|
+ * | `include/Dominio/` | Classes de domínio (.hpp) |
+ * | `include/Entidade/` | Classes de entidade (.hpp) |
+ * | `include/Apresentacao/` | Controladoras MAA, MAC, MAG e comandos |
+ * | `include/Command/` | ICommand, Invoker, EntradaUsuario |
+ * | `include/Service/` | Interfaces, stubs e ServicoAutorizacao |
+ * | `src/` | Implementações (.cpp) espelhando `include/` |
+ * | `src/main_cli.cpp` | Montagem e loop principal da aplicação |
+ *
+ * @section navegacao_sec Navegação nesta documentação
+ *
+ * - **Modules** (menu **Topics**) — visão agrupada por camada e módulo
+ *   (@ref dominio, @ref entidade, @ref maa, @ref msc, @ref msg, …)
+ * - **Classes** — índice alfabético de todas as classes
+ * - **Files** — índice por arquivo-fonte
+ * - **Search** — busca por nome de classe ou método
+ */

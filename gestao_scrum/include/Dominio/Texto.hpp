@@ -6,6 +6,7 @@ using namespace std;
 
 /**
  * @class Texto
+ * @ingroup dominio
  * @brief Dominio que representa um texto curto de uso geral.
  *
  * Formato valido: ate 40 caracteres, contendo letras (a-z, A-Z), digitos (0-9),

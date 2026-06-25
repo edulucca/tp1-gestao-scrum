@@ -11,7 +11,7 @@
 DOXYFILE_ENCODING      = UTF-8
 PROJECT_NAME           = gestao_scrum
 PROJECT_NUMBER         = 
-PROJECT_BRIEF          =
+PROJECT_BRIEF          = "Sistema de gestao Scrum — TP1 Tecnicas de Programacao (UnB)"
 PROJECT_LOGO           =
 OUTPUT_DIRECTORY       =
 CREATE_SUBDIRS         = NO
@@ -41,7 +41,7 @@ BUILTIN_STL_SUPPORT    = NO
 CPP_CLI_SUPPORT        = NO
 SIP_SUPPORT            = NO
 IDL_PROPERTY_SUPPORT   = YES
-DISTRIBUTE_GROUP_DOC   = NO
+DISTRIBUTE_GROUP_DOC   = YES
 SUBGROUPING            = YES
 TYPEDEF_HIDES_STRUCT   = NO
 SYMBOL_CACHE_SIZE      = 0
@@ -67,7 +67,7 @@ INLINE_INFO            = YES
 SORT_MEMBER_DOCS       = YES
 SORT_BRIEF_DOCS        = NO
 SORT_MEMBERS_CTORS_1ST = NO
-SORT_GROUP_NAMES       = NO
+SORT_GROUP_NAMES       = YES
 SORT_BY_SCOPE_NAME     = NO
 STRICT_PROTO_MATCHING  = NO
 GENERATE_TODOLIST      = YES
@@ -91,75 +91,32 @@ WARN_IF_UNDOCUMENTED   = NO
 WARN_IF_DOC_ERROR      = YES
 WARN_NO_PARAMDOC       = YES
 WARN_FORMAT            = "$file:$line: $text"
-WARN_LOGFILE            = "/usr/local/luis/unb/tp1-gestao-scrum/gestao_scrum/doxygen/doxygen.log"
+WARN_LOGFILE            =
 #---------------------------------------------------------------------------
 # configuration options related to the input files
 #---------------------------------------------------------------------------
 INPUT                  = \
-	"../include/Test/Dominio/NomeTest.hpp" \
-	"../include/Test/Entidade/PlanoSprintTest.hpp" \
-	"../include/Test/Dominio/CodigoTest.hpp" \
-	"../src/Test/Dominio/SenhaTest.cpp" \
-	"../include/Entidade/Projeto.hpp" \
-	"../include/Test/Entidade/HistoriaUsuarioTest.hpp" \
-	"../src/Entidade/PlanoSprint.cpp" \
-	"../include/Test/Dominio/EstadoTest.hpp" \
-	"../src/Test/Entidade/PessoaTest.cpp" \
-	"../src/Test/Dominio/TempoTest.cpp" \
-	"../src/Dominio/Email.cpp" \
-	"../src/Dominio/Tempo.cpp" \
-	"../src/Entidade/Pessoa.cpp" \
-	"../include/Dominio/Nome.hpp" \
-	"../include/Dominio/Tempo.hpp" \
-	"../src/main.cpp" \
-	"../src/Test/Dominio/NomeTest.cpp" \
-	"../src/Test/Entidade/PlanoSprintTest.cpp" \
-	"../include/Test/Dominio/TextoTest.hpp" \
-	"../include/Test/Dominio/DataTest.hpp" \
-	"../src/Dominio/Codigo.cpp" \
-	"../src/Test/Dominio/EstadoTest.cpp" \
-	"../include/Test/Dominio/PrioridadeTest.hpp" \
-	"../src/Dominio/Papel.cpp" \
-	"../include/Dominio/Texto.hpp" \
-	"../include/Dominio/Senha.hpp" \
-	"../include/Test/Dominio/PapelTest.hpp" \
-	"../src/Test/Dominio/EmailTest.cpp" \
-	"../src/Test/Dominio/PapelTest.cpp" \
-	"../include/Dominio/Data.hpp" \
-	"../include/Entidade/PlanoSprint.hpp" \
-	"../src/Test/Dominio/DataTest.cpp" \
-	"../include/Test/Dominio/EmailTest.hpp" \
-	"../src/Test/Dominio/CodigoTest.cpp" \
-	"../src/Test/main_test.cpp" \
-	"../src/Dominio/Prioridade.cpp" \
-	"../include/Dominio/Codigo.hpp" \
-	"../include/Test/Entidade/ProjetoTest.hpp" \
-	"../include/Entidade/Pessoa.hpp" \
-	"../src/Test/Entidade/ProjetoTest.cpp" \
-	"../include/Entidade/HistoriaUsuario.hpp" \
-	"../src/Dominio/Data.cpp" \
-	"../include/Test/Entidade/PessoaTest.hpp" \
-	"../include/Dominio/Email.hpp" \
-	"../include/Test/Dominio/TempoTest.hpp" \
-	"../src/Test/Dominio/TextoTest.cpp" \
-	"../src/Entidade/HistoriaUsuario.cpp" \
-	"../include/Dominio/Papel.hpp" \
-	"../src/Dominio/Texto.cpp" \
-	"../src/Dominio/Estado.cpp" \
-	"../src/Entidade/Projeto.cpp" \
-	"../src/Test/Dominio/PrioridadeTest.cpp" \
-	"../src/Dominio/Senha.cpp" \
-	"../src/Test/Entidade/HistoriaUsuarioTest.cpp" \
-	"../include/Dominio/Prioridade.hpp" \
-	"../include/Dominio/Estado.hpp" \
-	"../src/Dominio/Nome.cpp" \
-	"../include/Test/Dominio/SenhaTest.hpp" 
+	"mainpage.dox" \
+	"modules.dox" \
+	"../include/Dominio" \
+	"../include/Entidade" \
+	"../include/Apresentacao" \
+	"../include/Command" \
+	"../include/Service" \
+	"../src/Dominio" \
+	"../src/Entidade" \
+	"../src/Apresentacao" \
+	"../src/Command" \
+	"../src/Service" \
+	"../src/main_cli.cpp"
 INPUT_ENCODING         = UTF-8
-FILE_PATTERNS          =
-RECURSIVE              = NO
+FILE_PATTERNS          = *.hpp \
+                         *.cpp \
+                         *.dox
+RECURSIVE              = YES
 EXCLUDE                =
 EXCLUDE_SYMLINKS       = NO
-EXCLUDE_PATTERNS       =
+EXCLUDE_PATTERNS       = */Test/*
 EXCLUDE_SYMBOLS        =
 EXAMPLE_PATH           =
 EXAMPLE_PATTERNS       =

@@ -5,6 +5,7 @@ using namespace std;
 
 /**
  * @class PlanoSprint
+ * @ingroup entidade
  * @brief Entidade que representa um plano de sprint.
  *
  * Agrega o Codigo (chave primaria), o Objetivo (Texto) e a Capacidade (Tempo,

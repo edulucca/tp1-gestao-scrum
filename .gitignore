@@ -6,3 +6,8 @@ gestao_scrum/obj/
 gestao_scrum/*.layout
 gestao_scrum/*.depend
 .claude
+
+# Doxygen
+gestao_scrum/doxygen/html/
+
+docs/
