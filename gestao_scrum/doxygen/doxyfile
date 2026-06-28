@@ -101,14 +101,13 @@ INPUT                  = \
 	"../include/Dominio" \
 	"../include/Entidade" \
 	"../include/Apresentacao" \
-	"../include/Command" \
+	"../include/Aplicacao" \
 	"../include/Service" \
 	"../src/Dominio" \
 	"../src/Entidade" \
 	"../src/Apresentacao" \
-	"../src/Command" \
-	"../src/Service" \
-	"../src/main_cli.cpp"
+	"../src/Aplicacao" \
+	"../src/Service"
 INPUT_ENCODING         = UTF-8
 FILE_PATTERNS          = *.hpp \
                          *.cpp \

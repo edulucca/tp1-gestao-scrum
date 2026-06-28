@@ -17,11 +17,11 @@
 					<Add directory="include/Dominio" />
 					<Add directory="src/Entidade" />
 					<Add directory="include/Entidade" />
-					<Add directory="include/Command" />
+					<Add directory="include/Aplicacao/Command" />
+					<Add directory="include/Aplicacao/Autorizacao" />
 					<Add directory="include/Service/MSA" />
 					<Add directory="include/Service/MSC" />
 					<Add directory="include/Service/MSG" />
-					<Add directory="include/Service/Autorizacao" />
 					<Add directory="include/Apresentacao/MAA" />
 					<Add directory="include/Apresentacao/MAC" />
 					<Add directory="include/Apresentacao/MAG" />
@@ -40,11 +40,11 @@
 					<Add directory="include/Dominio" />
 					<Add directory="src/Entidade" />
 					<Add directory="include/Entidade" />
-					<Add directory="include/Command" />
+					<Add directory="include/Aplicacao/Command" />
+					<Add directory="include/Aplicacao/Autorizacao" />
 					<Add directory="include/Service/MSA" />
 					<Add directory="include/Service/MSC" />
 					<Add directory="include/Service/MSG" />
-					<Add directory="include/Service/Autorizacao" />
 					<Add directory="include/Apresentacao/MAA" />
 					<Add directory="include/Apresentacao/MAC" />
 					<Add directory="include/Apresentacao/MAG" />
@@ -66,11 +66,11 @@
 					<Add directory="include/Dominio" />
 					<Add directory="src/Entidade" />
 					<Add directory="include/Entidade" />
-					<Add directory="include/Command" />
+					<Add directory="include/Aplicacao/Command" />
+					<Add directory="include/Aplicacao/Autorizacao" />
 					<Add directory="include/Service/MSA" />
 					<Add directory="include/Service/MSC" />
 					<Add directory="include/Service/MSG" />
-					<Add directory="include/Service/Autorizacao" />
 					<Add directory="include/Apresentacao/MAA" />
 					<Add directory="include/Apresentacao/MAC" />
 					<Add directory="include/Apresentacao/MAG" />
@@ -91,8 +91,8 @@
 		<Unit filename="include/Apresentacao/MAC/MAC_Commands.hpp" />
 		<Unit filename="include/Apresentacao/MAG/CntrIU_MAG.hpp" />
 		<Unit filename="include/Apresentacao/MAG/MAG_Commands.hpp" />
-		<Unit filename="include/Command/ICommand.hpp" />
-		<Unit filename="include/Command/Invoker.hpp" />
+		<Unit filename="include/Aplicacao/Command/ICommand.hpp" />
+		<Unit filename="include/Aplicacao/Command/Invoker.hpp" />
 		<Unit filename="include/Dominio/Codigo.hpp" />
 		<Unit filename="include/Dominio/Data.hpp" />
 		<Unit filename="include/Dominio/Email.hpp" />
@@ -107,7 +107,7 @@
 		<Unit filename="include/Entidade/Pessoa.hpp" />
 		<Unit filename="include/Entidade/PlanoSprint.hpp" />
 		<Unit filename="include/Entidade/Projeto.hpp" />
-		<Unit filename="include/Service/Autorizacao/ServicoAutorizacao.hpp" />
+		<Unit filename="include/Aplicacao/Autorizacao/ServicoAutorizacao.hpp" />
 		<Unit filename="include/Service/MSA/IMSA_AuthService.hpp" />
 		<Unit filename="include/Service/MSA/MSA_AuthServiceStub.hpp" />
 		<Unit filename="include/Service/MSC/IMSC_CadastroService.hpp" />
@@ -185,7 +185,7 @@
 		</Unit>
 		<Unit filename="src/Apresentacao/MAG/cmd_ListarHistorias.cpp" />
 		<Unit filename="src/Apresentacao/MAG/cmd_AtualizarHistoria.cpp" />
-		<Unit filename="src/Command/Invoker.cpp" />
+		<Unit filename="src/Aplicacao/Command/Invoker.cpp" />
 		<Unit filename="src/Dominio/Codigo.cpp" />
 		<Unit filename="src/Dominio/Data.cpp" />
 		<Unit filename="src/Dominio/Email.cpp" />
@@ -200,7 +200,7 @@
 		<Unit filename="src/Entidade/Pessoa.cpp" />
 		<Unit filename="src/Entidade/PlanoSprint.cpp" />
 		<Unit filename="src/Entidade/Projeto.cpp" />
-		<Unit filename="src/Service/Autorizacao/ServicoAutorizacao.cpp" />
+		<Unit filename="src/Aplicacao/Autorizacao/ServicoAutorizacao.cpp" />
 		<Unit filename="src/Service/MSA/MSA_AuthServiceStub.cpp" />
 		<Unit filename="src/Service/MSC/MSC_CadastroServiceStub.cpp" />
 		<Unit filename="src/Service/MSG/MSG_GestaoServiceStub.cpp" />
@@ -261,7 +261,7 @@
 		<Unit filename="src/Test/main_test.cpp">
 			<Option target="Tests" />
 		</Unit>
-		<Unit filename="src/main_cli.cpp">
+		<Unit filename="src/Aplicacao/main_cli.cpp">
 			<Option target="Debug" />
 			<Option target="Release" />
 		</Unit>

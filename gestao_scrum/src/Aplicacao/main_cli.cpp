@@ -1,5 +1,6 @@
 /**
  * @file main_cli.cpp
+ * @ingroup aplicacao
  * @brief Ponto de entrada da aplicacao — monta stubs, controladoras e loop principal.
  */
 #include "CntrIU_MAA.hpp"

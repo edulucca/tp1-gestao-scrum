@@ -65,13 +65,34 @@
 /** @} */
 
 /**
+ * @defgroup aplicacao Aplicação
+ * @brief Orquestração do fluxo, autorização e infraestrutura Command.
+ *
+ * Contém o ponto de entrada (`main_cli`), regras de permissão por papel
+ * e o padrão Command (`ICommand`, `Invoker`, `EntradaUsuario`).
+ * @{
+ */
+
+/**
  * @defgroup command Command
+ * @ingroup aplicacao
  * @brief Padrão Command para desacoplar ações da interface dos serviços.
  *
  * @see @ref ICommand
  * @see @ref Invoker
  * @{
  */
+
+/** @} */
+
+/**
+ * @defgroup autorizacao Autorização
+ * @ingroup aplicacao
+ * @brief Regras de permissão por papel e serviço.
+ * @{
+ */
+
+/** @} */
 
 /** @} */
 
@@ -106,15 +127,6 @@
  * @defgroup msg MSG — Gestão
  * @ingroup servico
  * @brief CRUD e consultas sobre projetos, planos e histórias.
- * @{
- */
-
-/** @} */
-
-/**
- * @defgroup autorizacao Autorização
- * @ingroup servico
- * @brief Regras de permissão por papel e serviço.
  * @{
  */
 

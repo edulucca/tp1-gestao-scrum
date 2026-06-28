@@ -2,7 +2,7 @@
 
 /**
  * @class ICommand
- * @ingroup command
+ * @ingroup aplicacao
  * @brief Interface do padrao Command para encapsular acoes da apresentacao.
  *
  * Cada comando concreto delega a execucao a um servico via execute().

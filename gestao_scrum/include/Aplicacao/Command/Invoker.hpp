@@ -6,7 +6,7 @@
 
 /**
  * @class Invoker
- * @ingroup command
+ * @ingroup aplicacao
  * @brief Invocador que executa comandos ICommand em sequencia.
  */
 class Invoker {

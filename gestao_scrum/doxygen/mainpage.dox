@@ -18,12 +18,12 @@
  *     (email, senha, código, etc.). Aqui ocorre as validações de entrada.</li>
  * <li><b>Entidades</b> — grupo @ref entidade "Entidades" — objetos de negócio que agregam
  *     domínios (@ref Pessoa, @ref Projeto, @ref HistoriaUsuario, @ref PlanoSprint).</li>
- * <li><b>Serviços</b> — grupo @ref servico "Serviços" — interfaces `I*Service` e stubs que
- *     implementam lógica de negócio e armazenamento em memória.</li>
+ * <li><b>Aplicação</b> — grupo @ref aplicacao "Aplicação" — ponto de entrada,
+ *     autorização por papel e infraestrutura Command (@ref ICommand, @ref Invoker).</li>
  * <li><b>Apresentação</b> — grupo @ref apresentacao "Apresentação" — controladoras `CntrIU_*`
  *     que leem dados do usuário, validam com domínios e delegam aos serviços.</li>
- * <li><b>Command</b> — grupo @ref command "Command" — padrão Command que desacopla ações
- *     da interface dos serviços (@ref ICommand, @ref Invoker).</li>
+ * <li><b>Serviços</b> — grupo @ref servico "Serviços" — interfaces `I*Service` e stubs que
+ *     implementam lógica de negócio e armazenamento em memória.</li>
  * </ol>
  *
  * @section arquitetura_sec Arquitetura em camadas
@@ -34,10 +34,13 @@
  *  Usuário (terminal)
  *       │
  *       ▼
+ *  main_cli + ServicoAutorizacao          ← Aplicação (orquestração + permissões)
+ *       │
+ *       ▼
  *  CntrIU_MAA / CntrIU_MAC / CntrIU_MAG   ← Apresentação (valida entrada)
  *       │
  *       ▼
- *  LoginCommand, CriarPessoaCommand, ...  ← Command (opcional)
+ *  LoginCommand, CriarPessoaCommand, ...  ← Command (dentro da apresentação)
  *       │
  *       ▼
  *  IMSA_AuthService / IMSC_CadastroService / IMSG_GestaoService
@@ -104,11 +107,10 @@
  * |-------|----------|
  * | `include/Dominio/` | Classes de domínio (.hpp) |
  * | `include/Entidade/` | Classes de entidade (.hpp) |
- * | `include/Apresentacao/` | Controladoras MAA, MAC, MAG e comandos |
- * | `include/Command/` | ICommand, Invoker, EntradaUsuario |
- * | `include/Service/` | Interfaces, stubs e ServicoAutorizacao |
+ * | `include/Aplicacao/` | main_cli, Autorização, Command (ICommand, Invoker, EntradaUsuario) |
+ * | `include/Apresentacao/` | Controladoras MAA, MAC, MAG e comandos concretos |
+ * | `include/Service/` | Interfaces e stubs MSA, MSC, MSG |
  * | `src/` | Implementações (.cpp) espelhando `include/` |
- * | `src/main_cli.cpp` | Montagem e loop principal da aplicação |
  *
  * @section navegacao_sec Navegação nesta documentação
  *
